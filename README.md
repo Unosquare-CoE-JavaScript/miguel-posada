@@ -56,3 +56,53 @@ Client component Vs Server component
 add interactivity and event listeners || Fetch data
 use state and lifecycle effects || access backend resources
 use browser only-API's and custom Hooks || Keep sensitive information(tokens, api keys)
+
+**Layouts and Templates**
+is very important to have a Layout file inside of every folder to share between different folder pages.
+they wrap a page usefull for navigation UI elements. Layout are rendered once and by convention it must be named as 'Layout.(tsx,jsx,ts)'
+
+**Nvigation**
+that was created in the root layout and using best HTML semantics principle
+also React <Link> tag
+
+**Styling**
+there are many ways to add styling to every folder component. it depends of the needs
+but is recommended to use _Tailwind or .module.css extension_ (e.g. styles.module.css)
++-.module.css-+
+inside component:
+import styles from './styles.module.css' and with this class defined inside component
+.dashboard {
+padding: 24px;
+}
+to call inside component is like:
+className={styles.dashboard} and
++-Tailwind-+
+to use this framework check this guideline https://nextjs.org/docs/app/building-your-application/styling/tailwind-css
+
+another way is using
+_Saas_
+https://nextjs.org/docs/app/building-your-application/styling/sass
+and
+_Css-in-JS_
+https://nextjs.org/docs/app/building-your-application/styling/css-in-js
+_Connecting with a DB Prisma_
+is very simple and is necesary to use an Actions File
+_Loading And error pages_
+only create both pages with same name and wrap inside a Promise
+to resolve for 'Loading' and eject for 'Error'
+_Server Mutation_
+
+**Server Action Mutation and Forms**
+https://nextjs.org/docs/app/building-your-application/data-fetching/forms-and-mutations
+
+<form action={create}> takes the FormData based on actions defined in actions.ts file
+
+**API Routes**
+create a file called 'api' and define const GET,POST,UPDATE and some others needed
+
+**Middleware**
+create middleware file and follow best NextJS practices and conventions
+https://nextjs.org/docs/app/building-your-application/routing/middleware
+
+**Deployment**
+finally the solution was deployed in veicel and URL is https://next-js-introduction-course.vercel.app/heroku
