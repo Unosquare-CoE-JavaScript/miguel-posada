@@ -23,3 +23,28 @@ _Primitive values_
 - This Keyword: characteristic of function execution. tight to the scope of the function wrraped excepts for arrow functions.
 - Prototypes: characteristic of Object and linked to objects. when object is created is linked to another that already exists
   that is called "prototype chain"
+
+  **Hoisting**
+  if one variable is using declaration with 'var variable = "greeting"' heyword and inside a function is declared with 'let variable= "greeting"'
+  the hoisting will propmt a ReferenceError if in the function scope is used before declaration but outside will work well with 'var'
+  identify the _target_ in the algothm and the _source_ reference
+
+  _Leical scope_
+  lexical scope” is that it’s controlled entirely by the placement of functions, blocks, and variable declarations, in relation to one another.
+  how to process variables.
+
+  1. encountering vars declarations in the 'scope manager'
+  2. compiler or engine asks the Scope Manager for delcared variables.
+  3. undefined variables shows marks errors
+     -The building represents our program’s nested scope collec-
+     tion. The first floor of the building represents the currently
+     executing scope. The top level of the building is the global
+     scope.
+     You resolve a target or source variable reference by first
+     looking on the current floor, and if you don’t find it, taking
+     the elevator to the next floor (i.e., an outer scope), looking
+     there, then the next, and so on. Once you get to the top floor
+     (the global scope), you either find what you’re looking for, or
+     you don’t. But you have to stop regardless-
+
+  - is important to undertand the 'lexical scope' of a variable in a single implementation
