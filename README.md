@@ -1,108 +1,50 @@
-# Introduction to NextJS - Training Course
+**Book You Don´t Know Javascript jet (YDKJSJ)**
 
-## miguel-posada
+- The path. read every chapter and and read again trying to solve some of the exercises
+- large concepts is important for digesting to re-reading, practicing and digesting some more
+- be patient with the way the reader learn from this book
 
-### Routing
+_Primitive values_
 
-\_Routing is based on folder and a parent and children structure. is delimited by slashes
-first the domain and later
-\_is important understand that there is two ways of create routes in a NextJS App
+- stay in mind that Null returns and Object insead of null
+- "Coercion" is the action of convert from one value type to another
 
-- using App Router structure
-- using Pages Router structure
+  _Variables_
 
-**Static Routing:**
-_creating folders and inside them a page.tsx or page.jsx page. is posible to avoid type in the URL the name of the
-folders in the route using parenthesis '()' in folders_
-**Dinamic Routing**
-is posible to create dynamic routes usig the [] keys wrapping the folder (e.g [id]) where i want to use dynamic routes
-when you need to get the value just pass 'params' and get the value inside the component like 'params.id'
+- working with 'var' and 'let' has its differences. 'var' is to the global scope. 'let' is block-scope. generate errors if not well declared
+- coprisson betwee '==' and '===' operators
+- coercion comparisons. important to understand because always is compared with primitive vlues
+- Objects and classes: is the way that JS suggest organize code using Class Pattern:
+  - Inheritance
+- Modules: methods are ecplicity exposed as public and is posible to export only defined functions
+  - create modules or variables or methods with 'Export' and 'Import' to use this when is neccesary.
+- Iterator: use Map and set, get to work with objects and cache functions
+- closure: very usefull to avoid performace issues
+- This Keyword: characteristic of function execution. tight to the scope of the function wrraped excepts for arrow functions.
+- Prototypes: characteristic of Object and linked to objects. when object is created is linked to another that already exists
+  that is called "prototype chain"
 
-**Rendering**
+  **Hoisting**
+  if one variable is using declaration with 'var variable = "greeting"' heyword and inside a function is declared with 'let variable= "greeting"'
+  the hoisting will propmt a ReferenceError if in the function scope is used before declaration but outside will work well with 'var'
+  identify the _target_ in the algothm and the _source_ reference
 
-_server component_
+  _Leical scope_
+  lexical scope” is that it’s controlled entirely by the placement of functions, blocks, and variable declarations, in relation to one another.
+  how to process variables.
 
-aloows to write UI that can be cached on the server based on route segments. by default NextJS Uses Server Components.
-this is importatnt because:
+  1. encountering vars declarations in the 'scope manager'
+  2. compiler or engine asks the Scope Manager for delcared variables.
+  3. undefined variables shows marks errors
+     -The building represents our program’s nested scope collec-
+     tion. The first floor of the building represents the currently
+     executing scope. The top level of the building is the global
+     scope.
+     You resolve a target or source variable reference by first
+     looking on the current floor, and if you don’t find it, taking
+     the elevator to the next floor (i.e., an outer scope), looking
+     there, then the next, and so on. Once you get to the top floor
+     (the global scope), you either find what you’re looking for, or
+     you don’t. But you have to stop regardless-
 
-- 'Data Fetching' performance
-- 'caching' results and
-- 'streaming' by split in chunks the loading info
-- 'Initial page Load' FCP First Contentfull Paint
-  generally Server components are rendered adapting to the Server Component Payload (RSC Payload) and client components to render HTML
-
-  +Static Rendering\*
-
-  - Routes are rendered at _build Time_ data is cached and pushed to a Content Delivery Network (CDN)
-  - used to data that is not personalized to the user like staic blog post or a product page
-
-  _*Dynamic Rendering*_
-
-  - Routes are rendered for each user at _request time_
-  - data personalized to the user like cookies or UrL's search params.
-  - uses Dynamics functions like cookies() or HEaders()
-
-by default developer doesn't need to know about rendering strategy. that is calculated by NextJs
-
-_*Client Components*_
-
-    - can use state, effects and event listeners
-    - client Components have acces to Browsers API's like geolocalization and LocalStorage
-    - is necessary to use the 'use client' directive
-
-_*Composition Pattern*_
-
-Client component Vs Server component
-add interactivity and event listeners || Fetch data
-use state and lifecycle effects || access backend resources
-use browser only-API's and custom Hooks || Keep sensitive information(tokens, api keys)
-
-**Layouts and Templates**
-is very important to have a Layout file inside of every folder to share between different folder pages.
-they wrap a page usefull for navigation UI elements. Layout are rendered once and by convention it must be named as 'Layout.(tsx,jsx,ts)'
-
-**Nvigation**
-that was created in the root layout and using best HTML semantics principle
-also React <Link> tag
-
-**Styling**
-there are many ways to add styling to every folder component. it depends of the needs
-but is recommended to use _Tailwind or .module.css extension_ (e.g. styles.module.css)
-+-.module.css-+
-inside component:
-import styles from './styles.module.css' and with this class defined inside component
-.dashboard {
-padding: 24px;
-}
-to call inside component is like:
-className={styles.dashboard} and
-+-Tailwind-+
-to use this framework check this guideline https://nextjs.org/docs/app/building-your-application/styling/tailwind-css
-
-another way is using
-_Saas_
-https://nextjs.org/docs/app/building-your-application/styling/sass
-and
-_Css-in-JS_
-https://nextjs.org/docs/app/building-your-application/styling/css-in-js
-_Connecting with a DB Prisma_
-is very simple and is necesary to use an Actions File
-_Loading And error pages_
-only create both pages with same name and wrap inside a Promise
-to resolve for 'Loading' and eject for 'Error'
-_Server Mutation_
-
-**Server Action Mutation and Forms**
-https://nextjs.org/docs/app/building-your-application/data-fetching/forms-and-mutations
-
-<form action={create}> takes the FormData based on actions defined in actions.ts file
-
-**API Routes**
-create a file called 'api' and define const GET,POST,UPDATE and some others needed
-
-**Middleware**
-create middleware file and follow best NextJS practices and conventions
-https://nextjs.org/docs/app/building-your-application/routing/middleware
-
-**Deployment**
-finally the solution was deployed in veicel and URL is https://next-js-introduction-course.vercel.app/heroku
+  - is important to undertand the 'lexical scope' of a variable in a single implementation
